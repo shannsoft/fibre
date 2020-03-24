@@ -1,0 +1,121 @@
+// If you want to override variables do it here
+@import "variables";
+
+// Import styles
+@import "~@coreui/coreui/scss/coreui";
+
+// If you want to add something do it here
+@import "custom";
+@import "../../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
+@import "../../node_modules/dragula/dist/dragula.css";
+@import "./animate.css";
+
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), 
+       local('MaterialIcons-Regular'), 
+       url(https://fonts.gstatic.com/s/materialicons/v21/2fcrYFNaTjcS6g4U3t-Y5UEw0lE80llgEseQY3FEmqw.woff2) format('woff2');
+}
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  pointer-events: none;
+}
+/* high-performance display:none; helper */
+.gu-hide {
+  left: -9999px !important;
+}
+/* added to mirrorContainer (default = body) while dragging */
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+/* added to the source element while its mirror is dragged */
+.gu-transit {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+}
+.material-icons {
+  font-family: 'Material Icons';
+}
+
+.app,
+app-dashboard,
+app-root, app-login , app-forgotpassword , app-getotp ,app-confirmpw {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+body {
+  background-color: white;
+}
+[table-border]{
+  border: 1px solid;
+}
+[icon-check]{
+  color: 	#4dbd74;
+}
+[icon-close]{
+ color:  #f86c6b;
+}
+.disabled{
+  pointer-events: none;
+  color: gray !important;
+}
+.mat-header-row {
+  min-height: 56px;
+  background: #f1f1f1;;
+}
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+.example-margin {
+  margin: 0 10px;
+}
+[w-100]{
+  width: 100%;
+}
+.mat-header-cell{
+  padding-top: 1rem;
+}
+.mat-form-field-appearance-outline .mat-form-field-outline{
+  background: white;
+    border-radius: 9%;
+}
+.m-b-5{
+  margin-bottom: 5%;
+}
+.m-t-2{
+  margin-top: 2%;
+}
+.success-snackbar{
+color : green;
+}
+.error-snackbar{
+color : red;
+}
+.snackbar-global{
+  background: white;
+  width: 50%;
+  font-size: 15px;
+}
+.float-right{
+  float: right;
+}
+.card-header-divider{
+  margin: 1rem !important;
+  width: 90% !important;
+}

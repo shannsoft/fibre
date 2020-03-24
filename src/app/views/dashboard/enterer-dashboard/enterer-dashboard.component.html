@@ -1,0 +1,97 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Dashboard</strong>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="entererForm">
+                        <div class="m-b-3">
+                            <mat-form-field class="col-xs-12 col-md-12 col-sm-12" appearance="outline">
+                                <mat-label>District</mat-label>
+                                <mat-select formControlName="district">
+                                    <mat-option value="">Select district Name</mat-option>
+                                    <mat-option value="1">1</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <p class="help-block error-text"
+                            *ngIf="entererForm.controls['district'].touched && entererForm.controls['district'].errors && entererForm.controls['district'].errors.required">
+                            This field is required
+                        </p>
+                        </div>
+                        <div class="m-b-3">
+                            <mat-form-field class="col-xs-12 col-md-12 col-sm-12" appearance="outline">
+                                <mat-label>Block</mat-label>
+                                <mat-select formControlName="block">
+                                    <mat-option value="">Select Block Name</mat-option>
+                                    <mat-option value="1">1</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <p class="help-block error-text"
+                                *ngIf="entererForm.controls['block'].touched && entererForm.controls['block'].errors && entererForm.controls['block'].errors.required">
+                                This field is required</p>
+                        </div>
+                        <div class="m-b-3">
+                            <mat-form-field class="col-xs-12 col-md-12 col-sm-12" appearance="outline">
+                                <mat-label>Gp</mat-label>
+                                <mat-select formControlName="gp">
+                                    <mat-option value="">Select gp</mat-option>
+                                    <mat-option value="1">1</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <p class="help-block error-text"
+                                *ngIf="entererForm.controls['gp'].touched && entererForm.controls['gp'].errors && entererForm.controls['gp'].errors.required">
+                                This field is required</p>
+                        </div>
+                        <div class="m-b-3">
+                            <mat-form-field class="col-xs-12 col-md-12 col-sm-12" appearance="outline">
+                                <mat-label>Name</mat-label>
+                                <input matInput placeholder="Name" formControlName="name">
+                            </mat-form-field>
+                            <p class="help-block error-text"
+                                *ngIf="entererForm.controls['name'].touched && entererForm.controls['name'].errors && entererForm.controls['name'].errors.required">
+                                This field is required</p>
+                        </div>
+                        <div class="m-b-3">
+                            <mat-form-field class="col-xs-12 col-md-12 col-sm-12" appearance="outline">
+                                <mat-label>Phone No</mat-label>
+                                <input matInput placeholder="Phone No" formControlName="phoneno">
+                            </mat-form-field>
+                            <p class="help-block error-text"
+                                *ngIf="entererForm.controls['phoneno'].touched && entererForm.controls['phoneno'].errors && entererForm.controls['phoneno'].errors.required">
+                                This field is required</p>
+                        </div>
+                        <div class="m-b-3">
+                            <mat-form-field class="col-xs-12 col-md-12 col-sm-12" appearance="outline">
+                                <mat-label>Email Id</mat-label>
+                                <input matInput placeholder="Email Id" formControlName="emailid">
+                            </mat-form-field>
+                            <p class="help-block error-text"
+                                *ngIf="entererForm.controls['emailid'].touched && entererForm.controls['emailid'].errors && entererForm.controls['emailid'].errors.required">
+                                This field is required</p>
+                        </div>
+                        <div class="m-b-3">
+                            <mat-form-field class="col-xs-12 col-md-12 col-sm-12" appearance="outline">
+                                <mat-label>Adress</mat-label>
+                                <input matInput placeholder="Adress" formControlName="adress">
+                            </mat-form-field>
+                            <p class="help-block error-text"
+                                *ngIf="entererForm.controls['adress'].touched && entererForm.controls['adress'].errors && entererForm.controls['adress'].errors.required">
+                                This field is required</p>
+                        </div>
+                        <div class="m-b-3">
+                            <mat-form-field class="col-xs-12 col-md-12 col-sm-12" appearance="outline">
+                                <mat-label>Fiber Required in km</mat-label>
+                                <input matInput placeholder="Fiber Required in km" formControlName="fiberrequired">
+                            </mat-form-field>
+                            <p class="help-block error-text"
+                                *ngIf="entererForm.controls['fiberrequired'].touched && entererForm.controls['fiberrequired'].errors && entererForm.controls['fiberrequired'].errors.required">
+                                This field is required</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
