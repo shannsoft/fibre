@@ -10,7 +10,7 @@
                         <div class="m-b-3">
                             <mat-form-field class="col-xs-12 col-md-12 col-sm-12" appearance="outline">
                                 <mat-label>District</mat-label>
-                                <mat-select w-100  formControlName="district" (selectionChange)="getBlock()">
+                                <mat-select w-100 formControlName="district" (selectionChange)="getBlock()">
                                     <mat-option>Select district</mat-option>
                                     <mat-option *ngFor="let x of districtList" [value]="x.id">
                                         {{x.district}}
@@ -18,9 +18,9 @@
                                 </mat-select>
                             </mat-form-field>
                             <p class="help-block error-text"
-                            *ngIf="entererForm.controls['district'].touched && entererForm.controls['district'].errors && entererForm.controls['district'].errors.required">
-                            This field is required
-                        </p>
+                                *ngIf="entererForm.controls['district'].touched && entererForm.controls['district'].errors && entererForm.controls['district'].errors.required">
+                                This field is required
+                            </p>
                         </div>
                         <div class="m-b-3">
                             <mat-form-field class="col-xs-12 col-md-12 col-sm-12" appearance="outline">
@@ -63,18 +63,24 @@
                                 <mat-label>Phone No</mat-label>
                                 <input matInput placeholder="Phone No" formControlName="phoneno">
                             </mat-form-field>
-                            <p class="help-block error-text"
-                                *ngIf="entererForm.controls['phoneno'].touched && entererForm.controls['phoneno'].errors && entererForm.controls['phoneno'].errors.required">
+                            <p ion-text color="danger" class="input-error error-text"
+                                *ngIf="entererForm.get('phoneno').touched && entererForm.get('phoneno').hasError('required')">
                                 This field is required</p>
+                            <p ion-text color="danger" class="input-error error-text"
+                                *ngIf="entererForm.get('phoneno').touched && entererForm.get('phoneno').hasError('pattern')">
+                                Phone number should be a 10 digit number</p>
                         </div>
                         <div class="m-b-3">
                             <mat-form-field class="col-xs-12 col-md-12 col-sm-12" appearance="outline">
                                 <mat-label>Email Id</mat-label>
                                 <input matInput placeholder="Email Id" formControlName="emailid">
                             </mat-form-field>
-                            <p class="help-block error-text"
-                                *ngIf="entererForm.controls['emailid'].touched && entererForm.controls['emailid'].errors && entererForm.controls['emailid'].errors.required">
+                            <p ion-text color="danger" class="input-error error-text"
+                                *ngIf="entererForm.get('emailid').touched && entererForm.get('emailid').hasError('required')">
                                 This field is required</p>
+                            <p ion-text color="danger" class="input-error error-text"
+                                *ngIf="entererForm.get('emailid').touched && entererForm.get('emailid').hasError('pattern')">
+                                Invalid email</p>
                         </div>
                         <div class="m-b-3">
                             <mat-form-field class="col-xs-12 col-md-12 col-sm-12" appearance="outline">
@@ -87,12 +93,25 @@
                         </div>
                         <div class="m-b-3">
                             <mat-form-field class="col-xs-12 col-md-12 col-sm-12" appearance="outline">
-                                <mat-label>Fiber Required in km</mat-label>
-                                <input matInput placeholder="Fiber Required in km" formControlName="fiberrequired">
+                                <mat-label>4 Core fiber required in meter</mat-label>
+                                <input matInput placeholder="4 Core fiber required in meter" formControlName="fiberrequired">
                             </mat-form-field>
                             <p class="help-block error-text"
                                 *ngIf="entererForm.controls['fiberrequired'].touched && entererForm.controls['fiberrequired'].errors && entererForm.controls['fiberrequired'].errors.required">
                                 This field is required</p>
+                        </div>
+                        <div class="m-b-3">
+                            <mat-form-field class="col-xs-12 col-md-12 col-sm-12" appearance="outline">
+                                <mat-label>6 core fiber required in meter</mat-label>
+                                <input matInput placeholder="6 Core fiber required in meter" formControlName="fiberrequiredinmt">
+                            </mat-form-field>
+                            <p class="help-block error-text"
+                                *ngIf="entererForm.controls['fiberrequiredinmt'].touched && entererForm.controls['fiberrequiredinmt'].errors && entererForm.controls['fiberrequired'].errors.required">
+                                This field is required</p>
+                        </div>
+                        <div class="form-group form-actions">
+                            <button type="submit" class="btn btn-sm btn-success"
+                                [disabled]="entererForm.status == 'INVALID'" (click)="updateRequirement()">Submit</button>
                         </div>
                     </form>
                 </div>
